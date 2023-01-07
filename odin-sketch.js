@@ -1,20 +1,17 @@
-function buildGrid(gridSize = 16){
+function buildGrid(squaresPerSide = 24){
 
+    const gridSize = 720;
     const grid = document.querySelector('.grid');
+    
+    grid.style.height = `${gridSize}px`;
+    grid.style.width = `${gridSize}px`;
+    grid.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
 
-    for (let i = 0; i < gridSize; i++) {
+    for (let i = 0; i < squaresPerSide ** 2; i++) {
 
-        const row = document.createElement('div');
-        row.classList.add('row');
-
-        for (let j = 0; j < gridSize; j++) {
-
-            const cell = document.createElement('div');
-            cell.classList.add('cell');
-            row.appendChild(cell);
-        }
-
-        grid.appendChild(row);
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('cell');
+        grid.appendChild(gridItem);
     }
 }
 
