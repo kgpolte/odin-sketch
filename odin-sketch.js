@@ -1,4 +1,4 @@
-function buildGrid(perSide = 50){
+function buildGrid(perSide = 25){
 
     // Handle invalid resolution inputs
     let resolution = parseInt(perSide) || 50;
@@ -27,12 +27,25 @@ function buildGrid(perSide = 50){
         const cell = document.createElement('div');
         cell.classList.add('cell');
         grid.appendChild(cell);
-
-        // Add an event listener to change the cell to black on mouseover
-        cell.addEventListener('mouseover', e => {
-            cell.style.background = '#000000'
-        });
+        cell.addEventListener('mouseover', e => addBlack(e.target));
     }
+}
+
+function addBlack(cell, amount) {
+    const computedStyle = String(getComputedStyle(cell).background);
+    const color = computedStyle.split(')')[0].split('(')[1];
+    const colorSplit = color.split(',')
+
+    const rCode = parseInt(colorSplit[0].trim()) - 26;
+    const gCode = parseInt(colorSplit[1].trim()) - 26;
+    const bCode = parseInt(colorSplit[2].trim()) - 26;
+    
+    if (rCode < 0) rCode = 0;
+    if (gCode < 0) gCode = 0;
+    if (bCode < 0) bCode = 0;
+
+    cell.style.background = `rgb(${rCode}, ${gCode}, ${bCode})`;
+    
 }
 
 buildGrid();

@@ -9,6 +9,7 @@ body {
     height: 100%;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
+    background: #F8F4EA;
 }
 
 .header {
@@ -16,18 +17,26 @@ body {
     justify-content:space-between;
     align-items: center;
     margin: 0;
-    background: gray;
+    background: #579BB1;
     padding: 0px 16px;
 }
 
 .header h1 {
     font-size: 24px;
+    color: #f7f5f0;
 }
 
 .right {
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+button {
+    padding: 8px;
+    background: #f7f5f0;
+    border: 1px solid #579BB1;
+    border-radius: 8px;
 }
 
 .content {
@@ -41,18 +50,21 @@ body {
 .grid {
     display: grid;
     gap: 1px;
-    padding: 4px;
-    border: 1px solid gray;
+    background: rgb(255, 255, 255);
+    padding: 8px;
+    border: 2px solid black;
     box-shadow: 5px 5px 10px gray;
 }
 
 .cell {
     border-radius: 4px;
+    background: rgb(255, 255, 255);
 }
 
 .footer {
     display: flex;
     justify-content: center;
     padding: 8px;
-    background: gray;
+    color: #f7f5f0;
+    background: #579BB1;
 }
