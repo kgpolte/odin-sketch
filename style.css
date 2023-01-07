@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
+    gap: 24px;
     height: 100%;
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
@@ -36,7 +37,8 @@ button {
     padding: 8px;
     background: #f7f5f0;
     border: 1px solid #579BB1;
-    border-radius: 8px;
+    border-radius: 6px;
+    color: #0A2647;
 }
 
 .content {
@@ -44,7 +46,12 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
     margin-bottom: auto;
+}
+
+.content h2 {
+    color: #0A2647;
 }
 
 .grid {
@@ -53,6 +60,7 @@ button {
     background: rgb(255, 255, 255);
     padding: 8px;
     border: 2px solid black;
+    border-radius: 4px;
     box-shadow: 5px 5px 10px gray;
 }
 
