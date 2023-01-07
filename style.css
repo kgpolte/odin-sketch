@@ -21,10 +21,10 @@ body {
 }
 
 .header h1 {
-
+    font-size: 24px;
 }
 
-.res-input {
+.right {
     display: flex;
     align-items: center;
     gap: 16px;

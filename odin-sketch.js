@@ -1,12 +1,14 @@
-function buildGrid(resolution = 24){
+function buildGrid(resolution = 50){
+
+    resolution = parseInt(resolution);
 
     // Handle invalid inputs
     if (resolution > 50) {
         resolution = 50;
-    } else if (resolution < 1) {
-        resolution = 1;
+    } else if (resolution < 10) {
+        resolution = 10;
     } else if (typeof resolution != 'number') {
-        resolution = 24;
+        resolution = 50;
     }
 
     // Set the size of the grid container and define the style rules
@@ -16,20 +18,33 @@ function buildGrid(resolution = 24){
     grid.style.width = `${gridSize}px`;
     grid.style.gridTemplateColumns = `repeat(${resolution}, 1fr)`;
 
-    // Create grid elements in the DOM
+    // Delete any previous cells
+    const cells = Array.from(document.querySelectorAll('.cell'));
+    cells.forEach(cell => cell.remove());
+
+    // Create the given number of grid cells
     for (let i = 0; i < resolution ** 2; i++) {
 
-        const gridItem = document.createElement('div');
-        gridItem.classList.add('cell');
-        grid.appendChild(gridItem);
+        // Make the cell
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        grid.appendChild(cell);
 
-        gridItem.addEventListener('mouseover', e => gridItem.style.background = '#000000');
-
+        // Add an event listener to change the cell to black on mouseover
+        cell.addEventListener('mouseover', e => {
+            cell.style.background = '#000000'
+        });
     }
+}
 
-    // Set the default value of the resolution input field
-    const resInput = document.getElementById('resolution');
-    resInput.value = resolution;
+function updateResolution(newResolution){
+
 }
 
 buildGrid();
+
+const resInput = document.getElementById('resolution');
+resInput.addEventListener('click', e => {
+    const newRes = prompt('Enter the Resolution: (10-100)');
+    buildGrid(newRes);
+});
