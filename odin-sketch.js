@@ -1,4 +1,6 @@
-function buildGrid(perSide = 50){
+// Builds or rebuilds the drawing grid
+// perSide is the number of cells per side of the grid
+function buildGrid(perSide = 25){
 
     // Handle invalid resolution inputs
     let resolution = parseInt(perSide) || 50;
@@ -30,15 +32,23 @@ function buildGrid(perSide = 50){
 
         // Add an event listener to change the cell to black on mouseover
         cell.addEventListener('mouseover', e => {
-            cell.style.background = '#000000'
+            cell.style.background = getRandomRGB();
         });
     }
+}
+
+// Returns a random rgb value, formatted as a css value string
+function getRandomRGB() {
+    const red = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 
 buildGrid();
 
 const resInput = document.getElementById('resolution');
 resInput.addEventListener('click', e => {
-    const newRes = prompt('Enter the Resolution: (10-100)');
+    const newRes = prompt('Enter the Resolution: (10-50)');
     buildGrid(newRes);
 });

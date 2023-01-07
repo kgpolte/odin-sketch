@@ -40,14 +40,17 @@ body {
 
 .grid {
     display: grid;
-    gap: 1px;
+    gap: 2px;
     padding: 4px;
+    background: black;
     border: 1px solid gray;
-    box-shadow: 5px 5px 10px gray;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px 2px gray;
 }
 
 .cell {
     border-radius: 4px;
+    background: white;
 }
 
 .footer {
