@@ -10,7 +10,7 @@ function buildGrid(perSide = 25){
     }
 
     // Set the size of the grid container and define the style rules
-    const gridSize = 720;
+    const gridSize = 600;
     const grid = document.querySelector('.grid');
     grid.style.height = `${gridSize}px`;
     grid.style.width = `${gridSize}px`;
@@ -36,9 +36,9 @@ function addBlack(cell, amount) {
     const color = computedStyle.split(')')[0].split('(')[1];
     const colorSplit = color.split(',')
 
-    const rCode = parseInt(colorSplit[0].trim()) - 26;
-    const gCode = parseInt(colorSplit[1].trim()) - 26;
-    const bCode = parseInt(colorSplit[2].trim()) - 26;
+    let rCode = parseInt(colorSplit[0].trim()) - 26;
+    let gCode = parseInt(colorSplit[1].trim()) - 26;
+    let bCode = parseInt(colorSplit[2].trim()) - 26;
     
     if (rCode < 0) rCode = 0;
     if (gCode < 0) gCode = 0;
