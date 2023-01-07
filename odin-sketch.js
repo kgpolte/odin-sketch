@@ -9,9 +9,8 @@ function buildGrid(perSide = 50){
         resolution = 10;
     }
 
-
     // Set the size of the grid container and define the style rules
-    const gridSize = 600;
+    const gridSize = 720;
     const grid = document.querySelector('.grid');
     grid.style.height = `${gridSize}px`;
     grid.style.width = `${gridSize}px`;
