@@ -17,3 +17,5 @@ function buildGrid(gridSize = 16){
         grid.appendChild(row);
     }
 }
+
+buildGrid();
