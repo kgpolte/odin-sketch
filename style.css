@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+element {
+    --light-cream: #F8F4EA;
+}
+
 body {
     display: flex;
     flex-grow: 1;
@@ -57,7 +61,7 @@ button {
 .grid {
     display: grid;
     gap: 1px;
-    background: rgb(255, 255, 255);
+    background: #FFFFFF;
     padding: 8px;
     border: 2px solid black;
     border-radius: 4px;
@@ -66,7 +70,7 @@ button {
 
 .cell {
     border-radius: 4px;
-    background: rgb(255, 255, 255);
+    background: #FFFFFF;
 }
 
 .footer {

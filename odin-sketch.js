@@ -48,6 +48,11 @@ function addBlack(cell, amount) {
     
 }
 
+function resetCanvas() {
+    const cells = Array.from(document.querySelectorAll('.cell'));
+    cells.forEach(cell => cell.style.background = '#FFFFFF');
+}
+
 buildGrid();
 
 const resInput = document.getElementById('resolution');
@@ -55,3 +60,6 @@ resInput.addEventListener('click', e => {
     const newRes = prompt('Enter the Resolution: (10-50)');
     buildGrid(newRes);
 });
+
+const reset = document.getElementById('reset');
+reset.addEventListener('click', () => resetCanvas());
