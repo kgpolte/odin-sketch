@@ -1,8 +1,41 @@
+html {
+    height: 100%;
+}
+
 body {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content:space-between;
     align-items: center;
+    margin: 0;
+    background: gray;
+    padding: 0px 16px;
+}
+
+.header h1 {
+
+}
+
+.res-input {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: auto;
 }
 
 .grid {
@@ -11,10 +44,9 @@ body {
     border: 1px solid gray;
 }
 
-.cell {
-    
-}
-
-.hover {
-
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    background: gray;
 }
