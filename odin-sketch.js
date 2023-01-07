@@ -1,15 +1,14 @@
-function buildGrid(resolution = 50){
+function buildGrid(perSide = 50){
 
-    resolution = parseInt(resolution);
+    // Handle invalid resolution inputs
+    let resolution = parseInt(perSide) || 50;
 
-    // Handle invalid inputs
     if (resolution > 50) {
         resolution = 50;
     } else if (resolution < 10) {
         resolution = 10;
-    } else if (typeof resolution != 'number') {
-        resolution = 50;
     }
+
 
     // Set the size of the grid container and define the style rules
     const gridSize = 600;
@@ -35,10 +34,6 @@ function buildGrid(resolution = 50){
             cell.style.background = '#000000'
         });
     }
-}
-
-function updateResolution(newResolution){
-
 }
 
 buildGrid();
