@@ -52,6 +52,6 @@ buildGrid();
 
 const resInput = document.getElementById('resolution');
 resInput.addEventListener('click', e => {
-    const newRes = prompt('Enter the Resolution: (10-100)');
+    const newRes = prompt('Enter the Resolution: (10-50)');
     buildGrid(newRes);
 });
